@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MoveZerosEnd {
 
     public static void main(String[] args) {
@@ -18,8 +20,8 @@ public class MoveZerosEnd {
         }
 
         // print
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
+        //for (int num : arr) {
+            System.out.print(Arrays.toString(arr));
+        //}
     }
 }

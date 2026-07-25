@@ -4,7 +4,7 @@ public class SaddlePoint {
     public static void main(String[] args) {
         int[][] matrix = {
                 {6, 3, 1},
-                {9, 7, 8},
+                {9, 12, 8},
                 {2, 4, 5}
         };
 

@@ -1,9 +1,19 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MostFrequentElement {
     public static void main(String[] args) {
         int[] array = {4, 5, 2, 4, 5, 4, 3, 2, 4, 5, 5};
+
+        Map.Entry<Integer,Long> mostNum = Arrays.stream(array).boxed()
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).get();
+        // Step 3: Print result
+        System.out.println("Most frequent element: " + mostNum.getValue());
+       // System.out.println("Frequency: " + maxFreq);
 
         // Step 1: Count frequency of each element using HashMap
         Map<Integer, Integer> frequencyMap = new HashMap<>();

@@ -2,6 +2,7 @@ import java.util.*;
 
 public class LongestSubstring {
     public static void main(String[] args) {
+
         String s = "javaconceptoftheday";
 
         Set<Character> set = new HashSet<>();

@@ -6,8 +6,9 @@ public class SumOfDigits {
 
         while (number > 0) {
             int digit = number % 10;  // extract last digit
-            sum += digit;
-            number /= 10;             // remove last digit
+            sum = sum*10+digit;
+            System.out.println(sum);
+            number = number / 10;             // remove last digit
         }
 
         System.out.println("Sum of digits: " + sum);

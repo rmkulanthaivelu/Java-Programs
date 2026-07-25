@@ -2,26 +2,19 @@ public class StringPermutations {
 
     public static void main(String[] args) {
         String str = "JSP";
-        permute(str.toCharArray(), 0);
+        permuation(str,"");
     }
-
-    static void permute(char[] arr, int index) {
-
-        if (index == arr.length - 1) {
-            System.out.println(String.valueOf(arr));
+    public static void permuation(String str,String ans){
+        if(str.length() ==0) {
+            System.out.println(ans);
             return;
         }
-
-        for (int i = index; i < arr.length; i++) {
-            swap(arr, index, i);
-            permute(arr, index + 1);
-            swap(arr, index, i); // backtrack
+        for(int i=0;i<str.length();i++){
+            char chr = str.charAt(i);
+           String remaining = str.substring(0,i)+str.substring(i+1);
+            //System.out.println(remaining);
+            permuation(remaining,ans+chr);
         }
     }
 
-    static void swap(char[] arr, int i, int j) {
-        char temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
 }
